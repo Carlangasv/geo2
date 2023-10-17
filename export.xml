@@ -1,0 +1,14 @@
+<Info>
+    <Node>Industry
+        <Link>City->Industry</Link>
+        <Link>Industry->Tourism place</Link>
+    </Node>
+    <Node>City
+        <Link>City->Industry</Link>
+        <Link>City->Tourism place</Link>
+    </Node>
+    <Node>Tourism place
+        <Link>City->Tourism place</Link>
+        <Link>Industry->Tourism place</Link>
+    </Node>
+</Info>

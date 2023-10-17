@@ -1,0 +1,34 @@
+{
+  "info": {
+    "Industry": {
+      "Link0": {
+        "source": "City",
+        "destiny": "Industry"
+      },
+      "Link1": {
+        "source": "Industry",
+        "destiny": "Tourism place"
+      }
+    },
+    "City": {
+      "Link2": {
+        "source": "City",
+        "destiny": "Industry"
+      },
+      "Link3": {
+        "source": "City",
+        "destiny": "Tourism place"
+      }
+    },
+    "Tourism place": {
+      "Link4": {
+        "source": "City",
+        "destiny": "Tourism place"
+      },
+      "Link5": {
+        "source": "Industry",
+        "destiny": "Tourism place"
+      }
+    }
+  }
+} 
