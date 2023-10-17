@@ -1,14 +1,14 @@
 <Info>
-    <Node>Industry
-        <Link>City->Industry</Link>
-        <Link>Industry->Tourism place</Link>
+    <Node>Industria
+        <Link>Ciudad->Industria</Link>
+        <Link>Industria->Sitio turistico</Link>
     </Node>
-    <Node>City
-        <Link>City->Industry</Link>
-        <Link>City->Tourism place</Link>
+    <Node>Ciudad
+        <Link>Ciudad->Industria</Link>
+        <Link>Ciudad->Sitio turistico</Link>
     </Node>
-    <Node>Tourism place
-        <Link>City->Tourism place</Link>
-        <Link>Industry->Tourism place</Link>
+    <Node>Sitio turistico
+        <Link>Ciudad->Sitio turistico</Link>
+        <Link>Industria->Sitio turistico</Link>
     </Node>
 </Info>

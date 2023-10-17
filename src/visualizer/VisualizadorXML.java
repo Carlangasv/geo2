@@ -1,17 +1,17 @@
 package visualizer;
 
-import basicStructure.Graph;
+import basicStructure.Grafo;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class XMLVisualizer extends AbstractVisualizer{
+public class VisualizadorXML extends VisualizadorAbstracto {
     @Override
-    public String visualize(Graph graph) {
+    public String visualizar(Grafo grafo) {
         StringBuilder sb = new StringBuilder();
         sb.append("<Info> \n");
-        graph.getNodes().forEach(e -> {
+        grafo.getNodos().forEach(e -> {
             sb.append("<Node>");
             sb.append(e.geoInformation());
             sb.append("\n");
@@ -29,10 +29,9 @@ public class XMLVisualizer extends AbstractVisualizer{
     }
 
     @Override
-    public void export(Graph graph) throws IOException {
-        AbstractVisualizer visualizer = new XMLVisualizer();
+    public void exportar(Grafo grafo) throws IOException {
         BufferedWriter writer = new BufferedWriter(new FileWriter("export.xml"));
-        writer.write(visualizer.visualize(graph));
+        writer.write(visualizar(grafo));
         writer.close();
     }
 }

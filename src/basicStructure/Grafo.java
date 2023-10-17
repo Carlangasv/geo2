@@ -2,28 +2,28 @@ package basicStructure;
 
 import java.util.List;
 
-public class Graph {
+public class Grafo {
     private List<Enlace> enlaces;
     private List<Nodo> nodos;
 
-    public Graph(List<Enlace> enlaces, List<Nodo> nodos) {
+    public Grafo(List<Enlace> enlaces, List<Nodo> nodos) {
         this.enlaces = enlaces;
         this.nodos = nodos;
     }
 
-    public List<Enlace> getLinks() {
+    public List<Enlace> getEnlaces() {
         return enlaces;
     }
 
-    public void setLinks(List<Enlace> enlaces) {
+    public void setEnlaces(List<Enlace> enlaces) {
         this.enlaces = enlaces;
     }
 
-    public List<Nodo> getNodes() {
+    public List<Nodo> getNodos() {
         return nodos;
     }
 
-    public void setNodes(List<Nodo> nodos) {
+    public void setNodos(List<Nodo> nodos) {
         this.nodos = nodos;
     }
 }

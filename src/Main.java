@@ -1,7 +1,7 @@
 import basicStructure.*;
-import visualizer.AbstractVisualizer;
-import visualizer.JSONVisualizer;
-import visualizer.XMLVisualizer;
+import visualizer.VisualizadorAbstracto;
+import visualizer.VisualizadorJSON;
+import visualizer.VisualizadorXML;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -11,25 +11,25 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) throws IOException {
-        Graph mainGraph = initialize();
-        export(mainGraph);
+        Grafo mainGrafo = inicializar();
+        exportar(mainGrafo);
     }
-    private static Graph initialize() {
-        Nodo nodo1 = new Industry();
-        Nodo nodo2 = new City();
-        Nodo nodo3 = new TourismPlace();
+    private static Grafo inicializar() {
+        Nodo nodo1 = new Industria();
+        Nodo nodo2 = new Ciudad();
+        Nodo nodo3 = new SitioTuristico();
         Enlace enlaceCityIndustry = new Enlace(nodo2, nodo1);
         Enlace enlaceCityPlace = new Enlace(nodo2, nodo3);
         Enlace enlaceIndustryPlace = new Enlace(nodo1, nodo3);
         List<Enlace> enlaces = new ArrayList<>(Arrays.asList(enlaceCityPlace, enlaceCityIndustry, enlaceIndustryPlace));
         List<Nodo> nodos = new ArrayList<>(Arrays.asList(nodo1, nodo2, nodo3));
-        return new Graph(enlaces, nodos);
+        return new Grafo(enlaces, nodos);
     }
 
-    private static void export(Graph graph) throws IOException {
-        AbstractVisualizer jsonVisualizer = new JSONVisualizer();
-        AbstractVisualizer xmlVisualizer = new XMLVisualizer();
-        jsonVisualizer.export(graph);
-        xmlVisualizer.export(graph);
+    private static void exportar(Grafo grafo) throws IOException {
+        VisualizadorAbstracto jsonVisualizer = new VisualizadorJSON();
+        VisualizadorAbstracto xmlVisualizer = new VisualizadorXML();
+        jsonVisualizer.exportar(grafo);
+        xmlVisualizer.exportar(grafo);
     }
 }

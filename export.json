@@ -1,33 +1,33 @@
 {
   "info": {
-    "Industry": {
+    "Industria": {
       "Link0": {
-        "source": "City",
-        "destiny": "Industry"
+        "source": "Ciudad",
+        "destiny": "Industria"
       },
       "Link1": {
-        "source": "Industry",
-        "destiny": "Tourism place"
+        "source": "Industria",
+        "destiny": "Sitio turistico"
       }
     },
-    "City": {
+    "Ciudad": {
       "Link2": {
-        "source": "City",
-        "destiny": "Industry"
+        "source": "Ciudad",
+        "destiny": "Industria"
       },
       "Link3": {
-        "source": "City",
-        "destiny": "Tourism place"
+        "source": "Ciudad",
+        "destiny": "Sitio turistico"
       }
     },
-    "Tourism place": {
+    "Sitio turistico": {
       "Link4": {
-        "source": "City",
-        "destiny": "Tourism place"
+        "source": "Ciudad",
+        "destiny": "Sitio turistico"
       },
       "Link5": {
-        "source": "Industry",
-        "destiny": "Tourism place"
+        "source": "Industria",
+        "destiny": "Sitio turistico"
       }
     }
   }
