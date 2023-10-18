@@ -17,15 +17,10 @@ public class VisualizadorXML extends VisualizadorAbstracto {
         StringBuilder sb = new StringBuilder();
         sb.append("<Info> \n");
         getGrafo().getNodos().forEach(e -> {
-            sb.append("<Node>");
-            sb.append(e.geoInformation());
-            sb.append("\n");
+            sb.append("<Node>").append(e.geoInformation()).append("\n");
             e.getEnlaces().forEach( x ->{
-                sb.append("<Link>");
-                sb.append(x.getPuntoPartida().geoInformation());
-                sb.append("->");
-                sb.append(x.getPuntoLlegada().geoInformation());
-                sb.append("</Link> \n");
+                sb.append("<Link>").append(x.getPuntoPartida().geoInformation()).append("->");
+                sb.append(x.getPuntoLlegada().geoInformation()).append("</Link> \n");
             });
             sb.append("</Node> \n");
         });

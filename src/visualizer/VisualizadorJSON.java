@@ -17,36 +17,25 @@ public class VisualizadorJSON extends VisualizadorAbstracto {
     @Override
     public String visualizar() {
         StringBuilder sb = new StringBuilder();
+        sb.append("{\n");
+        sb.append("\"info\": {\n");
+
         AtomicInteger index = new AtomicInteger();
-        sb.append("{ \n");
-        sb.append("\"info\":{\n");
-        getGrafo().getNodos().forEach(e -> {
-            sb.append("\"");
-            sb.append(e.geoInformation());
-            sb.append("\"");
-            sb.append(":{ \n");
-            e.getEnlaces().forEach(x -> {
-                sb.append("\"Link");
-                sb.append(index.get());
-                sb.append("\"");
-                sb.append(":{ \n");
-                sb.append("\"source\":");
-                sb.append("\"");
-                sb.append(x.getPuntoPartida().geoInformation());
-                sb.append("\"");
-                sb.append(", \n");
-                sb.append("\"destiny\":");
-                sb.append("\"");
-                sb.append(x.getPuntoLlegada().geoInformation());
-                sb.append("\"");
-                sb.append("\n");
-                sb.append("}, \n");
-                index.getAndIncrement();
+        getGrafo().getNodos().forEach(node -> {
+            sb.append('\"').append(node.geoInformation()).append("\": {\n");
+            node.getEnlaces().forEach(link -> {
+                sb.append("\"Link")
+                        .append(index.getAndIncrement()).append("\": {\n");
+                sb.append("\"source\": \"").append(link.getPuntoPartida().geoInformation()).append("\",\n");
+                sb.append("\"destiny\": \"").append(link.getPuntoLlegada().geoInformation()).append("\"\n");
+                sb.append("},\n");
             });
-            sb.append("}, \n");
+            sb.deleteCharAt(sb.length() - 2);
+            sb.append("},\n");
         });
-        sb.append("} \n");
-        sb.append("} \n");
+        sb.deleteCharAt(sb.length() - 2);
+        sb.append("}\n");
+        sb.append("}\n");
         return sb.toString();
     }
 
