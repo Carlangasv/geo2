@@ -18,7 +18,7 @@ public abstract class Nodo {
         this.enlaces = new ArrayList<>();
     }
 
-    public abstract String geoInformation();
+    public abstract String funcInfoGeo();
 
     public List<Enlace> getEnlaces() {
         return enlaces;

@@ -4,7 +4,7 @@ public class SitioTuristico extends Nodo {
     private String estadoEspecifico;
 
     @Override
-    public String geoInformation() {
+    public String funcInfoGeo() {
         return "Sitio turistico";
     }
 

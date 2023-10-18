@@ -1,34 +1,34 @@
 {
-  "info": {
-    "Industria": {
-      "Link0": {
-        "source": "Ciudad",
-        "destiny": "Industria"
-      },
-      "Link1": {
-        "source": "Industria",
-        "destiny": "Sitio turistico"
-      }
-    },
-    "Ciudad": {
-      "Link2": {
-        "source": "Ciudad",
-        "destiny": "Industria"
-      },
-      "Link3": {
-        "source": "Ciudad",
-        "destiny": "Sitio turistico"
-      }
-    },
-    "Sitio turistico": {
-      "Link4": {
-        "source": "Ciudad",
-        "destiny": "Sitio turistico"
-      },
-      "Link5": {
-        "source": "Industria",
-        "destiny": "Sitio turistico"
-      }
-    }
-  }
+"información": {
+"Industria": {
+"Enlace0": {
+"puntoPartida": "Ciudad",
+"puntoLlegada": "Industria"
+},
+"Enlace1": {
+"puntoPartida": "Industria",
+"puntoLlegada": "Sitio turistico"
+}
+},
+"Ciudad": {
+"Enlace2": {
+"puntoPartida": "Ciudad",
+"puntoLlegada": "Industria"
+},
+"Enlace3": {
+"puntoPartida": "Ciudad",
+"puntoLlegada": "Sitio turistico"
+}
+},
+"Sitio turistico": {
+"Enlace4": {
+"puntoPartida": "Ciudad",
+"puntoLlegada": "Sitio turistico"
+},
+"Enlace5": {
+"puntoPartida": "Industria",
+"puntoLlegada": "Sitio turistico"
+}
+}
+}
 }

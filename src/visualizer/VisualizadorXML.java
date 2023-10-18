@@ -16,13 +16,13 @@ public class VisualizadorXML extends VisualizadorAbstracto {
     public String visualizar() {
         StringBuilder sb = new StringBuilder();
         sb.append("<Info> \n");
-        getGrafo().getNodos().forEach(e -> {
-            sb.append("<Node>").append(e.geoInformation()).append("\n");
-            e.getEnlaces().forEach( x ->{
-                sb.append("<Link>").append(x.getPuntoPartida().geoInformation()).append("->");
-                sb.append(x.getPuntoLlegada().geoInformation()).append("</Link> \n");
+        getGrafo().getNodos().forEach(nodo -> {
+            sb.append("<Nodo>").append(nodo.funcInfoGeo()).append("\n");
+            nodo.getEnlaces().forEach(enlace -> {
+                sb.append("<Enlace>").append(enlace.getPuntoPartida().funcInfoGeo()).append("->");
+                sb.append(enlace.getPuntoLlegada().funcInfoGeo()).append("</Enlace> \n");
             });
-            sb.append("</Node> \n");
+            sb.append("</Nodo> \n");
         });
         sb.append("</Info>");
         return sb.toString();

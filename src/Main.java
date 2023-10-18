@@ -15,9 +15,9 @@ public class Main {
         exportar(mainGrafo);
     }
     private static Grafo inicializar() {
-        Nodo nodo1 = new Industria();
-        Nodo nodo2 = new Ciudad();
-        Nodo nodo3 = new SitioTuristico();
+        Industria nodo1 = new Industria();
+        Ciudad nodo2 = new Ciudad();
+        SitioTuristico nodo3 = new SitioTuristico();
         Enlace enlaceCityIndustry = new Enlace(nodo2, nodo1);
         Enlace enlaceCityPlace = new Enlace(nodo2, nodo3);
         Enlace enlaceIndustryPlace = new Enlace(nodo1, nodo3);

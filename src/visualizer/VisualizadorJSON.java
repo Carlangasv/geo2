@@ -16,18 +16,15 @@ public class VisualizadorJSON extends VisualizadorAbstracto {
 
     @Override
     public String visualizar() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("{\n");
-        sb.append("\"info\": {\n");
-
         AtomicInteger index = new AtomicInteger();
-        getGrafo().getNodos().forEach(node -> {
-            sb.append('\"').append(node.geoInformation()).append("\": {\n");
-            node.getEnlaces().forEach(link -> {
-                sb.append("\"Link")
-                        .append(index.getAndIncrement()).append("\": {\n");
-                sb.append("\"source\": \"").append(link.getPuntoPartida().geoInformation()).append("\",\n");
-                sb.append("\"destiny\": \"").append(link.getPuntoLlegada().geoInformation()).append("\"\n");
+        StringBuilder sb = new StringBuilder();
+        sb.append("{\n").append("\"información\": {\n");
+        getGrafo().getNodos().forEach(nodo -> {
+            sb.append('\"').append(nodo.funcInfoGeo()).append("\": {\n");
+            nodo.getEnlaces().forEach(enlace -> {
+                sb.append("\"Enlace").append(index.getAndIncrement()).append("\": {\n");
+                sb.append("\"puntoPartida\": \"").append(enlace.getPuntoPartida().funcInfoGeo()).append("\",\n");
+                sb.append("\"puntoLlegada\": \"").append(enlace.getPuntoLlegada().funcInfoGeo()).append("\"\n");
                 sb.append("},\n");
             });
             sb.deleteCharAt(sb.length() - 2);
