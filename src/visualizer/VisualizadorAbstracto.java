@@ -6,7 +6,7 @@ import java.io.IOException;
 
 public abstract class VisualizadorAbstracto {
 
-    private Grafo grafo;
+    private final Grafo grafo;
 
     public VisualizadorAbstracto(Grafo grafo) {
         this.grafo = grafo;
