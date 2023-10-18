@@ -9,13 +9,18 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class VisualizadorJSON extends VisualizadorAbstracto {
 
+    public VisualizadorJSON(Grafo grafo) {
+        super(grafo);
+    }
+
+
     @Override
-    public String visualizar(Grafo grafo) {
+    public String visualizar() {
         StringBuilder sb = new StringBuilder();
         AtomicInteger index = new AtomicInteger();
         sb.append("{ \n");
         sb.append("\"info\":{\n");
-        grafo.getNodos().forEach(e -> {
+        getGrafo().getNodos().forEach(e -> {
             sb.append("\"");
             sb.append(e.geoInformation());
             sb.append("\"");
@@ -46,9 +51,9 @@ public class VisualizadorJSON extends VisualizadorAbstracto {
     }
 
     @Override
-    public void exportar(Grafo grafo) throws IOException {
+    public void exportar() throws IOException {
         BufferedWriter writer = new BufferedWriter(new FileWriter("export.json"));
-        writer.write(visualizar(grafo));
+        writer.write(visualizar());
         writer.close();
     }
 }

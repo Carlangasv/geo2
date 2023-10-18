@@ -7,11 +7,16 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class VisualizadorXML extends VisualizadorAbstracto {
+
+    public VisualizadorXML(Grafo grafo) {
+        super(grafo);
+    }
+
     @Override
-    public String visualizar(Grafo grafo) {
+    public String visualizar() {
         StringBuilder sb = new StringBuilder();
         sb.append("<Info> \n");
-        grafo.getNodos().forEach(e -> {
+        getGrafo().getNodos().forEach(e -> {
             sb.append("<Node>");
             sb.append(e.geoInformation());
             sb.append("\n");
@@ -29,9 +34,9 @@ public class VisualizadorXML extends VisualizadorAbstracto {
     }
 
     @Override
-    public void exportar(Grafo grafo) throws IOException {
+    public void exportar() throws IOException {
         BufferedWriter writer = new BufferedWriter(new FileWriter("export.xml"));
-        writer.write(visualizar(grafo));
+        writer.write(visualizar());
         writer.close();
     }
 }
